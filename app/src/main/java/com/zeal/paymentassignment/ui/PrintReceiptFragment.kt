@@ -27,7 +27,9 @@ class PrintReceiptFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvAmount.text = FlowDataObject.getInstance().amount.toString();
+        val amount = arguments?.getString("amount") ?:"0.0"
+
+        binding.tvAmount.text = amount
 
         binding.btnPrint.setOnClickListener {}
 
